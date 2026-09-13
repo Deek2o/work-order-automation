@@ -4,18 +4,18 @@ A Python-based automation pipeline for processing daily work-order reports, appl
 
 This portfolio project demonstrates practical IT operations automation using **Python, Pandas and OpenPyXL**.
 
-> **Data disclaimer:** The repository contains only synthetic sample data and generic business rules. No company-confidential information, real employee data, internal URLs, credentials or proprietary code is included.
+> \*\*Data disclaimer:\*\* The repository contains only synthetic sample data and generic business rules. No company-confidential information, real employee data, internal URLs, credentials or proprietary code is included.
 
 ## Problem
 
 Daily work-order reports often require repetitive manual activities:
 
-- Downloading and reading operational reports
-- Cleaning unnecessary or inconsistent data
-- Applying business rules to identify work-order categories
-- Separating records for different operational teams
-- Preparing Excel reports
-- Distributing structured outputs
+* Downloading and reading operational reports
+* Cleaning unnecessary or inconsistent data
+* Applying business rules to identify work-order categories
+* Separating records for different operational teams
+* Preparing Excel reports
+* Distributing structured outputs
 
 ## Solution
 
@@ -25,7 +25,7 @@ The pipeline converts these steps into a repeatable workflow:
 Input Excel/CSV
       |
       v
-Read & Validate
+Read \& Validate
       |
       v
 Data Cleaning
@@ -47,29 +47,29 @@ The project is inspired by a real enterprise work-order automation workflow that
 
 ## Features
 
-- XLSX and CSV input support
-- Input schema validation
-- Duplicate and empty-row handling
-- Text normalization
-- Date normalization
-- Deterministic rule-based classification
-- Separate Excel report generation by category
-- Timestamped output files
-- Summary report
-- Unit tests with pytest
-- Modular project structure
+* XLSX and CSV input support
+* Input schema validation
+* Duplicate and empty-row handling
+* Text normalization
+* Date normalization
+* Deterministic rule-based classification
+* Separate Excel report generation by category
+* Timestamped output files
+* Summary report
+* Unit tests with pytest
+* Modular project structure
 
 ## Classification Rules
 
 The sample implementation demonstrates five operational categories:
 
-| Category | Example signals |
-|---|---|
-| User Lifecycle | Leaver, user deletion, deactivation, joiner/mover |
-| Identity Management | Identity, access, password, account, IDM |
-| Application Support | Application, portal, software, app support |
-| Service Request | Service request, standard request |
-| Business as Usual | Fallback for routine operational work |
+|Category|Example signals|
+|-|-|
+|User Lifecycle|Leaver, user deletion, deactivation, joiner/mover|
+|Identity Management|Identity, access, password, account, IDM|
+|Application Support|Application, portal, software, app support|
+|Service Request|Service request, standard request|
+|Business as Usual|Fallback for routine operational work|
 
 These are generic demonstration rules and can be replaced with organization-specific rules.
 
@@ -78,20 +78,20 @@ These are generic demonstration rules and can be replaced with organization-spec
 ```text
 work-order-automation/
 ├── src/
-│   ├── __init__.py
+│   ├── \_\_init\_\_.py
 │   ├── config.py
 │   ├── reader.py
 │   ├── cleaner.py
 │   ├── classifier.py
-│   ├── report_generator.py
+│   ├── report\_generator.py
 │   └── pipeline.py
-├── sample_data/
-│   └── work_orders.xlsx
+├── sample\_data/
+│   └── work\_orders.xlsx
 ├── output/
 │   └── .gitkeep
 ├── tests/
-│   ├── test_cleaner.py
-│   └── test_classifier.py
+│   ├── test\_cleaner.py
+│   └── test\_classifier.py
 ├── .env.example
 ├── .gitignore
 ├── LICENSE
@@ -108,10 +108,10 @@ cd work-order-automation
 python -m venv .venv
 ```
 
-Windows:
+```cmd
 
-```bash
-.venv\Scripts\activate
+.venv\\Scripts\\activate.bat
+
 ```
 
 Linux/macOS:
@@ -131,7 +131,7 @@ pip install -r requirements.txt
 Using the included synthetic Excel report:
 
 ```bash
-python -m src.pipeline --input sample_data/work_orders.xlsx --output output
+python -m src.pipeline --input sample\_data/work\_orders.xlsx --output output
 ```
 
 The pipeline will print the number of input records, records remaining after cleaning, and generated reports.
@@ -146,12 +146,12 @@ pytest -q
 
 The code is intentionally separated into small modules:
 
-- `reader.py` handles input and schema validation.
-- `cleaner.py` handles normalization and duplicate removal.
-- `classifier.py` contains business-rule classification.
-- `report_generator.py` creates operational outputs.
-- `pipeline.py` orchestrates the complete workflow.
-- `config.py` keeps runtime configuration separate from business logic.
+* `reader.py` handles input and schema validation.
+* `cleaner.py` handles normalization and duplicate removal.
+* `classifier.py` contains business-rule classification.
+* `report\_generator.py` creates operational outputs.
+* `pipeline.py` orchestrates the complete workflow.
+* `config.py` keeps runtime configuration separate from business logic.
 
 This structure makes the automation easier to test, maintain and extend.
 
@@ -159,20 +159,21 @@ This structure makes the automation easier to test, maintain and extend.
 
 Potential production-oriented extensions include:
 
-- Outlook/Graph API input adapter
-- Email-based report retrieval
-- Configurable rules from YAML/JSON
-- Structured logging
-- Retry and exception handling
-- Database persistence
-- REST API trigger
-- Scheduled execution
-- Dashboard/metrics
-- Docker deployment
-- CI/CD with GitHub Actions
+* Outlook/Graph API input adapter
+* Email-based report retrieval
+* Configurable rules from YAML/JSON
+* Structured logging
+* Retry and exception handling
+* Database persistence
+* REST API trigger
+* Scheduled execution
+* Dashboard/metrics
+* Docker deployment
+* CI/CD with GitHub Actions
 
 ## Author
 
 **Deekshith V**
 
 Automation Engineer focused on Python automation, IT operations automation, REST APIs, ITSM workflows and enterprise automation.
+
